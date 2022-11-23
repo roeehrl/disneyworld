@@ -22,9 +22,33 @@ namespace disneyworld.Controllers
 
         // GET: api/Persons
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Person>>> GetPeople()
+        public async Task<ActionResult<IEnumerable<PersonDTO>>> GetPeople()
         {
-            return await _context.People.ToListAsync();
+            var people = from b in _context.People
+                select new PersonDTO()
+                {
+                    Id = b.Id,
+                    FirstName = b.FirstName,
+                    LastName = b.LastName,
+                    Nickname = b.Nickname,
+                    AdditionalName = b.AdditionalName,
+                    ArFirstName = b.ArFirstName,
+                    ArLastName = b.ArLastName,
+                    ArNickname = b.ArNickname,
+                    ArAdditionalName = b.ArAdditionalName,
+                    NationalityName = b.NationalityNavigation != null ? b.NationalityNavigation.Name : "NONE",
+                    Details = b.Details,
+                    ArDetails = b.ArDetails,
+                    TripletDTOs = from t in b.Triplets select new TripletDTO(){
+                        Pstn = t.Pstn,
+                        Imei = t.Imei,
+                        Imsi = t.Imsi
+                    },
+                    PersonalNumber = b.PersonalNumber
+                };
+
+
+            return await people.ToListAsync();
         }
 
         // GET: api/Persons/5
