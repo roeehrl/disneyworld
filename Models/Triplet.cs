@@ -24,3 +24,18 @@ public partial class Triplet
 
     public virtual Person? PersonNavigation { get; set; }
 }
+
+public partial class TripletDTO
+{
+    public int Id { get; set; }
+
+
+    public string? Pstn { get; set; }
+
+    public string? Imei { get; set; }
+
+    public string? Imsi { get; set; }
+
+
+
+}

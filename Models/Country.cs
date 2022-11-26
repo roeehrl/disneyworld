@@ -20,3 +20,20 @@ public partial class Country
 
     public virtual ICollection<Site> Sites { get; } = new List<Site>();
 }
+
+public partial class CountryDTO
+{
+    public int Id { get; set; }
+
+    public string Name { get; set; } = null!;
+
+    public string? ArName { get; set; }
+
+    public string? CallCode { get; set; }
+
+    public string? NationCode { get; set; }
+
+
+}
+
+

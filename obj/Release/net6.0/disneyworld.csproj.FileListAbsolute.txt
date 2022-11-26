@@ -265,6 +265,7 @@
 /Users/roeeharel/Documents/DEV/git/disneyworld/obj/Release/net6.0/disneyworld.pdb
 /Users/roeeharel/Documents/DEV/git/disneyworld/obj/Release/net6.0/disneyworld.genruntimeconfig.cache
 /Users/roeeharel/Documents/DEV/git/disneyworld/obj/Release/net6.0/ref/disneyworld.dll
+<<<<<<< HEAD
 C:\Users\ROEE\Documents\disneyworld\bin\Release\net6.0\appsettings.Development.json
 C:\Users\ROEE\Documents\disneyworld\bin\Release\net6.0\appsettings.json
 C:\Users\ROEE\Documents\disneyworld\bin\Release\net6.0\disneyworld.exe
@@ -531,3 +532,5 @@ C:\Users\ROEE\Documents\disneyworld\obj\Release\net6.0\refint\disneyworld.dll
 C:\Users\ROEE\Documents\disneyworld\obj\Release\net6.0\disneyworld.pdb
 C:\Users\ROEE\Documents\disneyworld\obj\Release\net6.0\disneyworld.genruntimeconfig.cache
 C:\Users\ROEE\Documents\disneyworld\obj\Release\net6.0\ref\disneyworld.dll
+=======
+>>>>>>> d43fc01e55a1f85f865301b6f5c3ff2a3a09cc5e
