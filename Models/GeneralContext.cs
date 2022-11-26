@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using disneyworld.Models;
 
 namespace disneyworld.Models;
 
@@ -145,6 +146,21 @@ public partial class GeneralContext : DbContext
 
         });
 
+          modelBuilder.Entity<Sex>(entity =>
+        {
+            entity.ToTable("sexes");
+
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
+            entity.Property(e => e.ArName).HasColumnName("ar_name");
+            entity.Property(e => e.Name)
+                .HasMaxLength(50)
+                .HasColumnName("name");
+            entity.Property(e => e.Active).HasColumnName("active");
+
+        });
+
         modelBuilder.Entity<Triplet>(entity =>
         {
             entity.ToTable("triplets");
@@ -176,4 +192,6 @@ public partial class GeneralContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+    public DbSet<disneyworld.Models.Sex> Sex { get; set; }
 }

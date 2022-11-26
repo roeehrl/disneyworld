@@ -29,6 +29,10 @@ public partial class TripletDTO
 {
     public int Id { get; set; }
 
+    public int? Person { get; set; }
+
+    public int Active { get; set; }
+
 
     public string? Pstn { get; set; }
 

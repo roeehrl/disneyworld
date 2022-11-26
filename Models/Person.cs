@@ -48,6 +48,9 @@ public partial class Person
 public partial class PersonDTO
 {
     public int Id { get; set; }
+    public int Active { get; set; }
+
+    public int Sex { get; set; }
 
     public string FirstName { get; set; } = null!;
 
@@ -64,6 +67,9 @@ public partial class PersonDTO
     public string? ArNickname { get; set; }
 
     public string? ArAdditionalName { get; set; }
+
+    public int? Nationality { get; set; }
+
 
     public string? NationalityName { get; set; }
 

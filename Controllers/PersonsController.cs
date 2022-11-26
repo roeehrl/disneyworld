@@ -39,6 +39,9 @@ namespace disneyworld.Controllers
                     NationalityName = b.NationalityNavigation != null ? b.NationalityNavigation.Name : "NONE",
                     Details = b.Details,
                     ArDetails = b.ArDetails,
+                    Active = b.Active,
+                    Sex = b.Sex,
+                    Nationality = b.Nationality,
                     TripletDTOs = from t in b.Triplets select new TripletDTO(){
                         Pstn = t.Pstn,
                         Imei = t.Imei,
