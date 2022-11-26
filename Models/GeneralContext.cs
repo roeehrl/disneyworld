@@ -47,6 +47,8 @@ public partial class GeneralContext : DbContext
             entity.Property(e => e.NationCode)
                 .HasMaxLength(50)
                 .HasColumnName("nation_code");
+            entity.Property(e => e.Active).HasColumnName("active");
+
         });
 
         modelBuilder.Entity<Person>(entity =>
@@ -86,10 +88,16 @@ public partial class GeneralContext : DbContext
             entity.Property(e => e.PersonalNumber)
                 .HasMaxLength(50)
                 .HasColumnName("personal_number");
+            entity.Property(e => e.Active).HasColumnName("active");
+            entity.Property(e => e.Sex).HasColumnName("sex");
 
             entity.HasOne(d => d.NationalityNavigation).WithMany(p => p.People)
                 .HasForeignKey(d => d.Nationality)
                 .HasConstraintName("FK_people_countries");
+            
+            entity.HasOne(d => d.SexNavigation).WithMany(p => p.People)
+                .HasForeignKey(d => d.Sex)
+                .HasConstraintName("FK_people_sex");
         });
 
         modelBuilder.Entity<Site>(entity =>
@@ -113,6 +121,7 @@ public partial class GeneralContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("name");
             entity.Property(e => e.Type).HasColumnName("type");
+            entity.Property(e => e.Active).HasColumnName("active");
 
             entity.HasOne(d => d.CountryNavigation).WithMany(p => p.Sites)
                 .HasForeignKey(d => d.Country)
@@ -132,6 +141,8 @@ public partial class GeneralContext : DbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .HasColumnName("name");
+            entity.Property(e => e.Active).HasColumnName("active");
+
         });
 
         modelBuilder.Entity<Triplet>(entity =>
@@ -153,6 +164,8 @@ public partial class GeneralContext : DbContext
             entity.Property(e => e.Pstn)
                 .HasMaxLength(50)
                 .HasColumnName("PSTN");
+            entity.Property(e => e.Active).HasColumnName("active");
+
 
             entity.HasOne(d => d.PersonNavigation).WithMany(p => p.Triplets)
                 .HasForeignKey(d => d.Person)

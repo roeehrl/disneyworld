@@ -7,6 +7,11 @@ public partial class Person
 {
     public int Id { get; set; }
 
+    public int Active { get; set; }
+
+    public int Sex { get; set; }
+
+
     public string FirstName { get; set; } = null!;
 
     public string? LastName { get; set; }
@@ -32,6 +37,9 @@ public partial class Person
     public string? PersonalNumber { get; set; }
 
     public virtual Country? NationalityNavigation { get; set; }
+
+    public virtual Sex? SexNavigation { get; set; }
+
 
     public virtual ICollection<Triplet> Triplets { get; } = new List<Triplet>();
 }

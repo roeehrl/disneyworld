@@ -7,6 +7,9 @@ public partial class Site
 {
     public int Id { get; set; }
 
+    public int Active { get; set; }
+
+
     public string Name { get; set; } = null!;
 
     public string? ArName { get; set; }
