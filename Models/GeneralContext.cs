@@ -22,6 +22,8 @@ public partial class GeneralContext : DbContext
 
     public virtual DbSet<Site> Sites { get; set; }
 
+    public virtual DbSet<Sex> Sexes { get; set; }
+
     public virtual DbSet<SiteType> SiteTypes { get; set; }
 
     public virtual DbSet<Triplet> Triplets { get; set; }
