@@ -4,19 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>C:\inetpub\disney_api</_PublishTargetUrl>
-    <History>True|2022-11-20T23:33:54.4326656Z;True|2022-11-20T23:30:42.4314021+00:00;True|2022-11-20T23:10:41.8277290+00:00;</History>
+    <History>True|2022-11-27T09:22:36.8920060Z;True|2022-11-26T19:45:23.4029190+00:00;False|2022-11-26T19:44:52.8871021+00:00;False|2022-11-26T19:43:57.4594121+00:00;</History>
     <LastFailureDetails />
-    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\ROEE\Documents\My Web Sites\main\disney</_PublishTargetUrl>
   </PropertyGroup>
-  <ItemGroup>
-    <DestinationConnectionStrings Include="disney_db">
-      <Value>Server=tcp:jointdb.database.windows.net,1433%3bInitial Catalog=general%3bPersist Security Info=False%3bUser ID=manager%3bPassword=dinsey123!%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
-    </DestinationConnectionStrings>
-  </ItemGroup>
-  <ItemGroup>
-    <EFMigrations Include="disneyworld.Models.GeneralContext">
-      <Value>Server=tcp:jointdb.database.windows.net,1433%3bInitial Catalog=general%3bPersist Security Info=False%3bUser ID=manager%3bPassword=dinsey123!%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
-    </EFMigrations>
-  </ItemGroup>
 </Project>

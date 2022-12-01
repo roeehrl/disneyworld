@@ -14,11 +14,11 @@ public partial class Site
 
     public string? ArName { get; set; }
 
-    public string? CoordinateFormat { get; set; }
+    public int? CoordinateFormat { get; set; }
 
     public string? Coordinates { get; set; }
 
-    public int? ArDescription { get; set; }
+    public string? ArDescription { get; set; }
 
     public string? Description { get; set; }
 
@@ -34,14 +34,16 @@ public partial class SiteDTO
     public int Id { get; set; }
 
     public string Name { get; set; } = null!;
+    public int Active { get; set; }
+
 
     public string? ArName { get; set; }
 
-    public string? CoordinateFormat { get; set; }
+    public int? CoordinateFormat { get; set; }
 
     public string? Coordinates { get; set; }
 
-    public int? ArDescription { get; set; }
+    public string? ArDescription { get; set; }
 
     public string? Description { get; set; }
 

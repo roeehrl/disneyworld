@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using disneyworld.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace disneyworld.Models;
 
-public partial class GeneralContext : DbContext
+public partial class GeneralContext : IdentityDbContext<IdentityUser>
 {
     public GeneralContext()
     {
@@ -33,6 +35,9 @@ public partial class GeneralContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
+
         modelBuilder.Entity<Country>(entity =>
         {
             entity.ToTable("countries");
@@ -113,7 +118,6 @@ public partial class GeneralContext : DbContext
             entity.Property(e => e.ArDescription).HasColumnName("ar_description");
             entity.Property(e => e.ArName).HasColumnName("ar_name");
             entity.Property(e => e.CoordinateFormat)
-                .HasMaxLength(50)
                 .HasColumnName("coordinate_format");
             entity.Property(e => e.Coordinates)
                 .HasMaxLength(50)
