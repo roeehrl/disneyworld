@@ -1,45 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace disneyworld.Models;
-
-public partial class Triplet
+namespace disneyworld.Models
 {
-    public int Id { get; set; }
+    public partial class Triplet
+    {
+        public int Id { get; set; }
+        public int? Person { get; set; }
+        public string? Pstn { get; set; }
+        public string? Imei { get; set; }
+        public string? Imsi { get; set; }
+        public string? Description { get; set; }
+        public string? ArDescription { get; set; }
+        public int Active { get; set; }
+        public int? Updater { get; set; }
+        public int? Uploader { get; set; }
 
-    public int Active { get; set; }
-
-
-    public int? Person { get; set; }
-
-    public string? Pstn { get; set; }
-
-    public string? Imei { get; set; }
-
-    public string? Imsi { get; set; }
-
-    public string? Description { get; set; }
-
-    public string? ArDescription { get; set; }
-
-    public virtual Person? PersonNavigation { get; set; }
-}
-
-public partial class TripletDTO
-{
-    public int Id { get; set; }
-
-    public int? Person { get; set; }
-
-    public int Active { get; set; }
-
-
-    public string? Pstn { get; set; }
-
-    public string? Imei { get; set; }
-
-    public string? Imsi { get; set; }
-
-
-
+        public virtual Person? PersonNavigation { get; set; }
+    }
 }

@@ -22,36 +22,36 @@ namespace disneyworld.Controllers
 
         // GET: api/Sexes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Sex>>> GetSex()
+        public async Task<ActionResult<IEnumerable<Sex>>> GetSexes()
         {
-            return await _context.Sex.ToListAsync();
+            return await _context.Sexes.ToListAsync();
         }
 
         // GET: api/Sexes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Sex>> GetSex(int id)
+        public async Task<ActionResult<Sex>> GetSexes(int id)
         {
-            var sex = await _context.Sex.FindAsync(id);
+            var Sexes = await _context.Sexes.FindAsync(id);
 
-            if (sex == null)
+            if (Sexes == null)
             {
                 return NotFound();
             }
 
-            return sex;
+            return Sexes;
         }
 
         // PUT: api/Sexes/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSex(int id, Sex sex)
+        public async Task<IActionResult> PutSexes(int id, Sex Sexes)
         {
-            if (id != sex.Id)
+            if (id != Sexes.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(sex).State = EntityState.Modified;
+            _context.Entry(Sexes).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace disneyworld.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SexExists(id))
+                if (!SexesExists(id))
                 {
                     return NotFound();
                 }
@@ -75,33 +75,33 @@ namespace disneyworld.Controllers
         // POST: api/Sexes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Sex>> PostSex(Sex sex)
+        public async Task<ActionResult<Sex>> PostSexes(Sex Sexes)
         {
-            _context.Sex.Add(sex);
+            _context.Sexes.Add(Sexes);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSex", new { id = sex.Id }, sex);
+            return CreatedAtAction("GetSexes", new { id = Sexes.Id }, Sexes);
         }
 
         // DELETE: api/Sexes/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteSex(int id)
+        public async Task<IActionResult> DeleteSexes(int id)
         {
-            var sex = await _context.Sex.FindAsync(id);
-            if (sex == null)
+            var Sexes = await _context.Sexes.FindAsync(id);
+            if (Sexes == null)
             {
                 return NotFound();
             }
 
-            _context.Sex.Remove(sex);
+            _context.Sexes.Remove(Sexes);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool SexExists(int id)
+        private bool SexesExists(int id)
         {
-            return _context.Sex.Any(e => e.Id == id);
+            return _context.Sexes.Any(e => e.Id == id);
         }
     }
 }

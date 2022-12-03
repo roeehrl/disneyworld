@@ -1,39 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace disneyworld.Models;
-
-public partial class Country
+namespace disneyworld.Models
 {
-    public int Id { get; set; }
-    public int Active { get; set; }
+    public partial class Country
+    {
+        public Country()
+        {
+            People = new HashSet<Person>();
+            Sites = new HashSet<Site>();
+        }
 
-    public string Name { get; set; } = null!;
+        public int Id { get; set; }
+        public string Name { get; set; } = null!;
+        public string? ArName { get; set; }
+        public string? CallCode { get; set; }
+        public string? NationCode { get; set; }
+        public int Active { get; set; }
 
-    public string? ArName { get; set; }
-
-    public string? CallCode { get; set; }
-
-    public string? NationCode { get; set; }
-
-    public virtual ICollection<Person> People { get; } = new List<Person>();
-
-    public virtual ICollection<Site> Sites { get; } = new List<Site>();
+        public virtual ICollection<Person> People { get; set; }
+        public virtual ICollection<Site> Sites { get; set; }
+    }
 }
-
-public partial class CountryDTO
-{
-    public int Id { get; set; }
-
-    public string Name { get; set; } = null!;
-
-    public string? ArName { get; set; }
-
-    public string? CallCode { get; set; }
-
-    public string? NationCode { get; set; }
-
-
-}
-
-
